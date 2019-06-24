@@ -2,7 +2,6 @@
   <div id="secure">
     <h1>Secure Area</h1>
     <p>This is a test secure area</p>
-    <router-link to="/">Home</router-link>
   </div>
 </template>
 

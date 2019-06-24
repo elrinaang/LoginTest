@@ -1,12 +1,9 @@
 <template>
   <div id="login">
     <h1>Login</h1>
-    <!--<input type="text" name="username" v-model="input.username" placeholder="Username">
+    <input type="text" name="username" v-model="input.username" placeholder="Username">
     <input type="password" name="password" v-model="input.password" placeholder="Password">
-    <button type="button" v-on:click="login()">Login</button>-->
-    <router-link to="/Secure">
-      <p>TEST</p>
-    </router-link>
+    <button type="button" v-on:click="login()">Login</button>
   </div>
 </template>
 
@@ -20,10 +17,10 @@ export default {
         password: ""
       }
     };
-  }
-  /*methods: {
-            login() {
-                if(this.input.username != "" && this.input.password != "") {
+  },
+  methods: {
+    login() {
+      /*if(this.input.username != "" && this.input.password != "") {
                     if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
                         this.$emit("authenticated", true);
                         this.$router.replace({ name: "secure" });
@@ -32,9 +29,22 @@ export default {
                     }
                 } else {
                     console.log("A username and password must be present");
-                }
-            }
-        }*/
+                }*/
+      if (this.input.username !== "" && this.input.password !== "") {
+        if (
+          this.input.username === this.$parent.mockData.username &&
+          this.input.password === this.$parent.mockData.password
+        ) {
+          this.$emit("authenticated", true);
+          this.$router.replace({ name: "Secure" });
+        }else{
+          console.log("Wrong Username/ Password");
+        }
+      } else {
+        console.log("Please input something!");
+      }
+    }
+  }
 };
 </script>
 
