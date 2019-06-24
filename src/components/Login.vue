@@ -1,6 +1,8 @@
 <template>
   <div id="login">
     <h1>Login</h1>
+    <router-link to="/">Back</router-link>
+    <br>
     <input type="text" name="username" v-model="input.username" placeholder="Username">
     <input type="password" name="password" v-model="input.password" placeholder="Password">
     <button type="button" v-on:click="login()">Login</button>
@@ -37,11 +39,11 @@ export default {
         ) {
           this.$emit("authenticated", true);
           this.$router.replace({ name: "Secure" });
-        }else{
-          console.log("Wrong Username/ Password");
+        } else {
+          alert("Wrong Username/ Password");
         }
       } else {
-        console.log("Please input something!");
+        alert("Input required!");
       }
     }
   }

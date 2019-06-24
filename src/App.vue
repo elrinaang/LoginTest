@@ -19,7 +19,7 @@ export default {
   },
   mounted() {
     if (!this.authenticated) {
-      this.$router.replace({ name: "Login" });
+      this.$router.replace({ name: "Homepage" });
     }
   },
   methods: {
