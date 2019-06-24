@@ -1,2 +1,0 @@
-# LoginTest
-Created with CodeSandbox
